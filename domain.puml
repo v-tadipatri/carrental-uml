@@ -1,0 +1,10 @@
+@startuml
+
+entity "test_table" {
+  *id : varchar(36)
+  --
+  description : varchar(50)
+  created_on: timestamp
+}
+
+@enduml
