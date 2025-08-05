@@ -1,10 +1,38 @@
 @startuml
 
-entity "test_table" {
-  *id : varchar(36)
+entity "vehicle" {
+  *id : int
   --
-  description : varchar(50)
-  created_on: timestamp
+  carmake : varchar(50)
+  carmodel : varchar(50)
+  cartype : varchar(10)
+  status : varchar(10)
 }
+
+entity "reservation" {
+  *id : int
+  --
+  vehicle_id : int
+  create_time : datetime
+  reserve_start_time : datetime
+  reserve_end_time : datetime
+  status :  varchar(10)
+  user : varchar(10)
+}
+
+entity "reservation_history" {
+  *id : int
+  --
+  vehicle_id : int
+  create_time : datetime
+  reserve_start_time : datetime
+  reserve_end_time : datetime
+  update_end_time : datetime
+  status :  varchar(10)
+  user : varchar(10)
+}
+
+reservation ||--o{ vehicle : vehicle_id
+reservation_history ||--o{ vehicle : vehicle_id
 
 @enduml
