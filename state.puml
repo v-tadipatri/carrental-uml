@@ -1,0 +1,15 @@
+@startuml
+
+[*] --> CreateReservation
+CreateReservation : User specifies details for a new reservation
+CreateReservation -> StartReservation
+
+StartReservation --> EndReservation
+StartReservation : Reservation is IN_USE
+StartReservation : Vehicle is IN_USE
+
+EndReservation --> [*]
+EndReservation : ReservationHistory is updated
+EndReservation : Vehicle is AVAILABLE if ok
+
+@enduml
