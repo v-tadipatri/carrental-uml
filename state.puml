@@ -8,6 +8,9 @@ StartReservation --> EndReservation
 StartReservation : Reservation is IN_USE
 StartReservation : Vehicle is IN_USE
 
+StartReservation --> CheckUsage
+CheckUsage : Use polymorphism to check vehicle usage
+
 EndReservation --> [*]
 EndReservation : ReservationHistory is updated
 EndReservation : Vehicle is AVAILABLE if ok
