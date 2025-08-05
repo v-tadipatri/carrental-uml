@@ -32,7 +32,7 @@ entity "reservation_history" {
   user : varchar(10)
 }
 
-reservation ||--o{ vehicle : vehicle_id
-reservation_history ||--o{ vehicle : vehicle_id
+vehicle ||--o{ reservation : vehicle_id
+vehicle ||--o{ reservation_history : vehicle_id
 
 @enduml
